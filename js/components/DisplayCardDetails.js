@@ -55,6 +55,7 @@ app.component('DisplayCard', {
 
         addToWishlist: function (card) {
             this.$emit('add-to-wishlist', card)
+            console.log("1: Emit from Display Card", card)
         }
 
     },

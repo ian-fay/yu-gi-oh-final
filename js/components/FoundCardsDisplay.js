@@ -13,6 +13,12 @@ app.component('FoundCardsSelection', {
 
         },
 
+        addToWishlist: function (card) {
+            this.$emit('add-to-wishlist', card);
+            console.log("2: Emit from Found Card Display", card)
+
+        },
+
     },
 
     template: `
@@ -22,7 +28,7 @@ app.component('FoundCardsSelection', {
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        <display-card :card-list="foundCards" @add-new-card="addNewCard" v-for="card in foundCards.items"
+        <display-card :card-list="foundCards" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist" v-for="card in foundCards.items"
                    :card="card"
                    :card-name="card.cardName"
                    :card-type="card.cardType"

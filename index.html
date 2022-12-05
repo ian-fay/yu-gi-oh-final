@@ -60,7 +60,7 @@
         </q-header>
 
         <q-drawer show-if-above v-model="leftDrawerOpen" side="left" leftDrawerOpen="false" elevated>
-                <search-card-form id="searchCardForm" @add-new-card="addNewCard"></search-card-form>
+                <search-card-form id="searchCardForm" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></search-card-form>
         </q-drawer>
 
         <q-page-container>

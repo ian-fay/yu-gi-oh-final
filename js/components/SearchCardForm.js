@@ -102,6 +102,12 @@ app.component('SearchCardForm', {
 
         },
 
+        addToWishlist: function (card) {
+            this.$emit('add-to-wishlist', card);
+            console.log("3: Emit from Search Card Form", card)
+
+        },
+
         searchArchetypes: function (config) {
             let url = 'https://db.ygoprodeck.com/api/v7/archetypes.php';
 
@@ -220,7 +226,7 @@ app.component('SearchCardForm', {
       <q-dialog v-model="foundCardsDisplay"
                 transition-show="slide-up"
                 transition-hide="slide-down">
-        <found-cards-selection v-bind:found-cards="foundCards" @add-new-card="addNewCard"></found-cards-selection>
+        <found-cards-selection v-bind:found-cards="foundCards" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></found-cards-selection>
       </q-dialog>
       
       </div>

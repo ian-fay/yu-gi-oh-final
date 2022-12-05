@@ -79,7 +79,7 @@ app.component('GameCard', {
               v-model="card.favorite"
               checked-icon="favorite"
               color="red"
-              unchecked-icon="clear"
+              unchecked-icon="favorite_border"
           />
           <q-btn circle color="negative" @click="removeCard(card)"><i class="fa fa-trash" aria-hidden="true"></i></q-btn>
         </q-card-actions>
