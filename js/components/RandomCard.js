@@ -1,6 +1,10 @@
 // Component names should be TitleCase/PascalCase
 // and should be multi-word, but singular in plurality.
 // When used in HTML/templates, they become kabob-case.
+
+//To get a random card every day:
+//TODO: Either modify component to create a daily card for each day or remove this component and focus on refining the others that I want to do.
+
 app.component('RandomCard', {
     // data:    Data created and maintained by this component.
     //          This function is like a constructor. It gets called
@@ -10,11 +14,6 @@ app.component('RandomCard', {
             randomCard: [],
         }
     },
-
-    props: {
-
-    },
-
 
     methods: {
 

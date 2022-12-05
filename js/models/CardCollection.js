@@ -32,6 +32,12 @@ class CardCollection {
         }))
     };
 
+    sortCardName(searchTerm) {
+      return new CardCollection(this._arr.filter(function (card) {
+          return card.cardName === searchTerm;
+      }))
+    };
+
     containsCard(card){
         return this._findCard(card) >= 0;
     };

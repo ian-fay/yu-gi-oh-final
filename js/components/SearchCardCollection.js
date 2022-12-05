@@ -1,0 +1,1 @@
+//A component specifically designed to search the collections of cards, such as the wishlist.

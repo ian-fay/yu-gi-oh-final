@@ -1,5 +1,6 @@
 app.use(Quasar, {
     config: {
+        notify:{},
         brand: {
             primary: '#F45D01FF',
             secondary: '#b94a05',
