@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<!--
+  WARNING! Make sure that you match all Quasar related
+  tags to the same version! (Below it's "@2.8.4")
+  Possible Ideas:
+  Extra Collections/Decks that the user can add to.
+  'Suggests' additional cards to be added to the deck based on the archtype. 
+-->
+
+<head>
+    <title>Lexicon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Icon from https://realfavicongenerator.net/ -->
+    <!--    <link rel="manifest" href="./images/site.webmanifest">-->
+    <meta name="msapplication-TileColor" content="#3e92cc">
+    <meta name="msapplication-config" content="./images/browserconfig.xml">
+    <meta name="theme-color" content="#3e92cc">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@^1.0.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.8.4/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Paytone+One|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.8.4/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+<div id="app">
+    <q-layout view="hHh lpR fFf">
+
+        <q-header elevated class="bg-primary text-white" height-hint="98">
+            <q-toolbar>
+                <q-btn dense round @click="toggleLeftDrawer"><i class="fa-solid fa-plus"></i></q-btn>
+
+                <q-toolbar-title>
+                        <img class="icon-img" src="images/website-images/anime-card-back.png">
+                    Lexicon: Yu-Gi-Oh Card Collector
+                </q-toolbar-title>
+            </q-toolbar>
+
+            <q-tabs
+                    v-model="tab"
+                    dense
+                    active-color="white"
+                    indicator-color="white"
+                    align="justify"
+                    narrow-indicator
+                    align="left">
+                <q-tab name="all-cards" label="All Cards"></q-tab>
+                <q-tab name="fav-cards" label="Favorite Cards"></q-tab>
+                <q-tab name="wishlist" label="Card Wishlist"></q-tab>
+                <q-tab name="custom-collections" label="Custom Collections"></q-tab>
+                <q-tab name="rand-card" label="Random Card"></q-tab>
+            </q-tabs>
+        </q-header>
+
+        <q-drawer show-if-above v-model="leftDrawerOpen" side="left" leftDrawerOpen="false" elevated>
+                <search-card-form id="searchCardForm" @add-new-card="addNewCard"></search-card-form>
+        </q-drawer>
+
+        <q-page-container>
+
+            <q-tab-panels v-model="tab" animated>
+                <q-tab-panel name="all-cards">
+                    <div class="text-h6">All Cards</div>
+                    <card-collection collection-name="All Cards" v-bind:card-list="cardList" @remove-card="removeCard">
+
+                    </card-collection>
+                </q-tab-panel>
+
+                <q-tab-panel name="fav-cards">
+                    <div class="text-h6">Favorite Cards</div>
+                    <card-collection collection-name="Favorite Cards" v-bind:card-list="favCardList" @remove-card="removeCard"></card-collection>
+                </q-tab-panel>
+
+                <q-tab-panel name="wishlist">
+                    <div class="text-h6">Wishlist</div>
+                    <card-collection collection-name="Wishlisted Cards" v-bind:card-list="wishlist" @remove-card="removeCard"></card-collection>
+                </q-tab-panel>
+
+                <q-tab-panel name="rand-card">
+                    <div class="text-h6">Random Card</div>
+                    <random-card @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></random-card>
+                </q-tab-panel>
+
+            </q-tab-panels>
+        </q-page-container>
+
+        <q-footer elevated class="bg-grey-8">
+            <q-toolbar>
+                <q-toolbar-title>
+                        <img class="icon-img" src="images/website-images/anime-card-back.png">
+                </q-toolbar-title>
+            </q-toolbar>
+        </q-footer>
+
+    </q-layout>
+</div>
+
+<!-- Add the following at the end of your body tag -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar@2.8.4/dist/quasar.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/app-quasar.js"></script>
+<script src="js/models/CardCollection.js"></script>
+<script src="js/models/GameCard.js"></script>
+<script src="js/models/MonsterCard.js"></script>
+<script src="js/models/SpellCard.js"></script>
+<script src="js/models/TrapCard.js"></script>
+<script src="js/models/CardFactory.js"></script>
+<!--Make sure to include all of the js files here, as well as in the order you want them to load.-->
+<script src="js/components/GameCardDetails.js"></script>
+<script src="js/components/CardCollectionDisplay.js"></script>
+<script src="js/components/FoundCardsDisplay.js"></script>
+<script src="js/components/SearchCardForm.js"></script>
+<script src="js/components/DisplayCardDetails.js"></script>
+<script src="js/components/RandomCard.js"></script>
+<script>
+    app.mount('#app')
+</script>
+</body>
+</html>
