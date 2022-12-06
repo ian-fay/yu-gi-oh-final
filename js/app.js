@@ -15,7 +15,8 @@ app = Vue.createApp({
 
             leftDrawerOpen: false,
             tab: 'all-cards',
-            localCards: 'local-cards'
+            localCards: 'local-cards',
+            localWishlist: 'local-wishlist'
         }
     },
 
@@ -35,6 +36,10 @@ app = Vue.createApp({
         //Cuts the card that was passed in from the array
         removeCard: function (card) {
             this.cardList.removeCard(card);
+        },
+
+        removeFromWishlist: function (card) {
+          this.wishlist.removeCard(card);
         },
 
         //toggles the left drawer
@@ -57,6 +62,11 @@ app = Vue.createApp({
         if(localStorage.getItem(this.localCards)){
             this.cardList = CardFactory.createFromLocalStorage(JSON.parse(localStorage.getItem(this.localCards)));
         }
+
+        if(localStorage.getItem(this.localWishlist)){
+            this.wishlist = CardFactory.createFromLocalStorage(JSON.parse(localStorage.getItem(this.localWishlist)));
+        }
+
     },
 
     watch: {
@@ -64,6 +74,13 @@ app = Vue.createApp({
         cardList: {
             handler: function (newCollection) {
                 localStorage.setItem(this.localCards, JSON.stringify(newCollection.items))
+            },
+            deep: true,
+        },
+
+        wishlist: {
+            handler: function (newCollection) {
+                localStorage.setItem(this.localWishlist, JSON.stringify(newCollection.items))
             },
             deep: true,
         },
