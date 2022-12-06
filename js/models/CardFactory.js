@@ -28,19 +28,19 @@ class CardFactory {
                 case "XYZ Monster":
                 case"XYZ Pendulum Effect Monster":
                     console.log("Monster Card")
-                    newItem = new MonsterCard(card.name, card.type, card.desc, card.card_images[0].image_url, card.favorite = null);
+                    newItem = new MonsterCard(card.name, card.type, card.archetype, card.desc, card.card_images[0].image_url, card.favorite = null);
                     break;
                 case "Spell Card":
                     console.log("Spell Card")
-                    newItem = new SpellCard(card.name, card.type, card.desc, card.card_images[0].image_url, card.favorite = null);
+                    newItem = new SpellCard(card.name, card.type, card.archetype, card.desc, card.card_images[0].image_url, card.favorite = null);
                     break;
                 case "Trap Card":
-                    newItem = new TrapCard(card.name, card.type, card.desc, card.card_images[0].image_url, card.favorite = null);
+                    newItem = new TrapCard(card.name, card.type, card.archetype, card.desc, card.card_images[0].image_url, card.favorite = null);
                     console.log("Trap Card")
                     break;
                 default:
                     console.log("Undefined Card Type", card.id)
-                    newItem = new GameCard(card.name, card.type, card.desc, card.card_images[0].image_url, card.favorite = null);
+                    newItem = new GameCard(card.name, card.type, card.archetype, card.desc, card.card_images[0].image_url, card.favorite = null);
             }
 
             if (newItem) {
@@ -79,19 +79,19 @@ class CardFactory {
                 case "XYZ Monster":
                 case"XYZ Pendulum Effect Monster":
                     console.log("Monster Card")
-                    newItem = new MonsterCard(card.cardName, card.cardType, card.cardText, card.cardArt, card.favorite);
+                    newItem = new MonsterCard(card.cardName, card.cardType, card.cardArchetype, card.cardText, card.cardArt, card.favorite);
                     break;
                 case "Spell Card":
                     console.log("Spell Card")
-                    newItem = new SpellCard(card.cardName, card.cardType, card.cardText, card.cardArt, card.favorite);
+                    newItem = new SpellCard(card.cardName, card.cardType, card.cardArchetype, card.cardText, card.cardArt, card.favorite);
                     break;
                 case "Trap Card":
-                    newItem = new TrapCard(card.cardName, card.cardType, card.cardText, card.cardArt, card.favorite);
+                    newItem = new TrapCard(card.cardName, card.cardType, card.cardArchetype, card.cardText, card.cardArt, card.favorite);
                     console.log("Trap Card")
                     break;
                 default:
                     console.log("Undefined Card Type", card.id)
-                    newItem = new GameCard(card.cardName, card.cardType, card.cardText, card.cardArt, card.favorite);
+                    newItem = new GameCard(card.cardName, card.cardType, card.cardArchetype, card.cardText, card.cardArt, card.favorite);
             }
 
             if (newItem) {
