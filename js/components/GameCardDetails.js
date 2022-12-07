@@ -87,6 +87,4 @@ app.component('GameCard', {
       </q-dialog>
       </div>
     `,
-
-
 });

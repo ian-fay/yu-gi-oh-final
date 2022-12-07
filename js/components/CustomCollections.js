@@ -70,8 +70,8 @@ app.component('CustomCollections', {
           </q-card>
         </q-dialog>
 
-        <collection-display v-for="cardCollection in customCollections.items"
-        :card-collection = "cardCollection">
+        <collection-display v-for="(cardCollection, collectionName) in customCollections"
+                            :card-collection = "cardCollection">
         </collection-display>
         </div>
     `,
