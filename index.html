@@ -54,12 +54,13 @@
                 <q-tab name="all-cards" label="All Cards"></q-tab>
                 <q-tab name="fav-cards" label="Favorite Cards"></q-tab>
                 <q-tab name="wishlist" label="Card Wishlist"></q-tab>
-                <q-tab name="rand-card" label="Random Card"></q-tab>
+                <q-tab name="custom-collections" label="Custom Collections"></q-tab>
+<!--                <q-tab name="rand-card" label="Random Card"></q-tab>-->
             </q-tabs>
         </q-header>
 
         <q-drawer show-if-above v-model="leftDrawerOpen" side="left" leftDrawerOpen="false" elevated>
-                <search-card-form id="searchCardForm" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></search-card-form>
+                <search-card-database-form id="searchCardForm" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></search-card-database-form>
         </q-drawer>
 
         <q-page-container>
@@ -79,13 +80,18 @@
 
                 <q-tab-panel name="wishlist">
                     <div class="text-h6">Wishlist</div>
-                    <card-collection collection-name="Wishlisted Cards" v-bind:card-list="wishlist" @remove-card="removeCard"></card-collection>
+                    <wishlist-collection collection-name="Wishlisted Cards" v-bind:card-list="wishlist" @remove-from-wishlist="removeFromWishlist"></wishlist-collection>
                 </q-tab-panel>
 
-                <q-tab-panel name="rand-card">
-                    <div class="text-h6">Random Card</div>
-                    <random-card @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></random-card>
+                <q-tab-panel name="custom-collections">
+                    <div class="text-h6">Custom Collections</div>
+                    <custom-collections></custom-collections>
                 </q-tab-panel>
+
+<!--                <q-tab-panel name="rand-card">-->
+<!--                    <div class="text-h6">Random Card</div>-->
+<!--                    <random-card @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></random-card>-->
+<!--                </q-tab-panel>-->
 
             </q-tab-panels>
         </q-page-container>
@@ -116,11 +122,15 @@
 <script src="js/models/CardFactory.js"></script>
 <!--Make sure to include all of the js files here, as well as in the order you want them to load.-->
 <script src="js/components/GameCardDetails.js"></script>
+<script src="js/components/WishlistCardDetails.js"></script>
+<script src="js/components/CustomCollections.js"></script>
+<script src="js/components/CollectionDisplay.js"></script>
+<script src="js/components/WishlistCollection.js"></script>
 <script src="js/components/CardCollectionDisplay.js"></script>
 <script src="js/components/FoundCardsDisplay.js"></script>
-<script src="js/components/SearchCardForm.js"></script>
+<script src="js/components/SearchCardDatabaseForm.js"></script>
 <script src="js/components/DisplayCardDetails.js"></script>
-<script src="js/components/RandomCard.js"></script>
+
 <script>
     app.mount('#app')
 </script>

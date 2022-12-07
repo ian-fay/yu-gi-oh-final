@@ -58,13 +58,12 @@ app.component('WishlistCard', {
         </q-card-section>
 
         <q-separator/>
-        
-        <q-card-section>
-          <div class="text-h6">{{cardPrices}}</div>
+
+        <q-card-section class="q-pt-sm">
+          {{cardPrices}}
         </q-card-section>
-
+        
         <q-separator/>
-
         <q-card-actions align="center">
           <q-btn circle color="negative" @click="removeFromWishlist(card)"><i class="fa fa-trash" aria-hidden="true"></i></q-btn>
         </q-card-actions>
