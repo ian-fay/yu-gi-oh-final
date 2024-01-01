@@ -48,18 +48,16 @@
                     dense
                     active-color="white"
                     indicator-color="white"
-                    align="justify"
                     narrow-indicator
-                    align="left">
+                    align="justify">
                 <q-tab name="all-cards" label="All Cards"></q-tab>
                 <q-tab name="fav-cards" label="Favorite Cards"></q-tab>
                 <q-tab name="wishlist" label="Card Wishlist"></q-tab>
                 <q-tab name="custom-collections" label="Custom Collections"></q-tab>
-<!--                <q-tab name="rand-card" label="Random Card"></q-tab>-->
             </q-tabs>
         </q-header>
 
-        <q-drawer show-if-above v-model="leftDrawerOpen" side="left" leftDrawerOpen="false" elevated>
+        <q-drawer show-if-above v-model="leftDrawerOpen" side="left" elevated>
                 <search-card-database-form id="searchCardForm" @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></search-card-database-form>
         </q-drawer>
 
@@ -68,7 +66,7 @@
             <q-tab-panels v-model="tab" animated>
                 <q-tab-panel name="all-cards">
                     <div class="text-h6">All Cards</div>
-                    <search-card-collection v-bind:card-list="cardList"></search-card-collection>
+                    <!-- <search-card-collection v-bind:card-list="cardList"></search-card-collection> -->
                     <card-collection collection-name="All Cards" v-bind:card-list="cardList" @remove-card="removeCard">
 
                     </card-collection>
@@ -88,14 +86,8 @@
 
                 <q-tab-panel name="custom-collections">
                     <div class="text-h6">Custom Collections</div>
-                    <custom-collections></custom-collections>
+                    <!-- <custom-collections></custom-collections> -->
                 </q-tab-panel>
-
-<!--                <q-tab-panel name="rand-card">-->
-<!--                    <div class="text-h6">Random Card</div>-->
-<!--                    <random-card @add-new-card="addNewCard" @add-to-wishlist="addToWishlist"></random-card>-->
-<!--                </q-tab-panel>-->
-
             </q-tab-panels>
         </q-page-container>
 

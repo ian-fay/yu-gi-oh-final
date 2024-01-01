@@ -16,11 +16,9 @@ app.component('WishlistCollection', {
     methods: {
         removeFromWishlist(card){
             this.$emit('remove-from-wishlist', card);
-            console.log("2: Emit from Wishlist Collection")
+            console.log("Emit from Wishlist Collection")
         }
     },
-
-
     template: `
       <div>
       <wishlist-card v-for="card in cardList.items"

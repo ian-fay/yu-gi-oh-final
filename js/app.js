@@ -12,8 +12,7 @@ app = Vue.createApp({
                                 "You can only activate 1 \"Lightning Storm\" per turn.",  "https://ms.yugipedia.com//thumb/d/de/LightningStorm-MP22-EN-PScR-1E.png/300px-LightningStorm-MP22-EN-PScR-1E.png", false)),
 
             wishlist: new CardCollection(),
-
-            leftDrawerOpen: false,
+            leftDrawerOpen: null,
             tab: 'all-cards',
             localCards: 'local-cards',
             localWishlist: 'local-wishlist'
@@ -22,7 +21,8 @@ app = Vue.createApp({
 
     methods: {
 
-        //When this card is run, it pushes the New Card object into the cardList
+        //When this card is run, it pushes the New Card object into the cardList.
+        //This is triggered by the 
         addNewCard: function (newCard) {
             console.log(newCard)
             this.cardList.addNewCard(newCard)
@@ -42,7 +42,7 @@ app = Vue.createApp({
           this.wishlist.removeCard(card);
         },
 
-        //toggles the left drawer
+        //This toggles the left drawer open and closed. 
         toggleLeftDrawer() {
             this.leftDrawerOpen = !this.leftDrawerOpen;
         },

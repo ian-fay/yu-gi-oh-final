@@ -49,13 +49,13 @@ app.component('DisplayCard', {
     methods: {
         addNewCard: function (card) {
             this.$emit('add-new-card', card);
-            console.log("1: Emit from Display Card", card)
+            console.log("Emit from Display Card", card)
 
         },
 
         addToWishlist: function (card) {
             this.$emit('add-to-wishlist', card)
-            console.log("1: Emit from Display Card", card)
+            console.log("Emit from Display Card", card)
         }
 
     },

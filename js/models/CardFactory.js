@@ -58,18 +58,18 @@ class CardFactory {
 
         cards.forEach(card => {
             switch (card.cardType) {
-                case "Effect Monster":
-                case "Flip Effect Monster":
-                case "Flip Tuner Effect Monster":
-                case "Gemini Monster":
-                case "Normal Monster":
-                case "Normal Tuner Monster":
-                case "Pendulum Effect Monster":
-                case "Pendulum Flip Effect Monster":
-                case "Pendulum Normal Monster":
-                case "Pendulum Tuner Effect Monster":
-                case "Ritual Effect Monster":
-                case "Ritual Monster":
+                case"Effect Monster":
+                case"Flip Effect Monster":
+                case"Flip Tuner Effect Monster":
+                case"Gemini Monster":
+                case"Normal Monster":
+                case"Normal Tuner Monster":
+                case"Pendulum Effect Monster":
+                case"Pendulum Flip Effect Monster":
+                case"Pendulum Normal Monster":
+                case"Pendulum Tuner Effect Monster":
+                case"Ritual Effect Monster":
+                case"Ritual Monster":
                 case"Fusion Monster":
                 case"Link Monster":
                 case"Pendulum Effect Fusion Monster":

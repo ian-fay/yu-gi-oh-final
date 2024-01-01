@@ -30,7 +30,7 @@ app.component('WishlistCard', {
 
         favorite: {
             type: Boolean,
-            required: true
+            required: false
         }
     },
 
@@ -38,7 +38,7 @@ app.component('WishlistCard', {
     methods: {
         removeFromWishlist(card){
             this.$emit('remove-from-wishlist', card);
-            console.log("1: Emit from Wishlist Card Details")
+            console.log("Emit from Wishlist Card Details")
         }
 
     },
@@ -49,7 +49,6 @@ app.component('WishlistCard', {
       <q-dialog v-model="cardInfo">
       <q-card>
         <q-card-section align="center">
-          <!--Troubleshoot adding an image to the card.--> 
           <img :src="cardArt" class="focused-card-image">
         </q-card-section>
         
@@ -71,6 +70,4 @@ app.component('WishlistCard', {
       </q-dialog>
       </div>
     `,
-
-
 });

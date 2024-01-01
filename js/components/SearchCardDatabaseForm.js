@@ -98,13 +98,13 @@ app.component('SearchCardDatabaseForm', {
 
         addNewCard: function (card) {
             this.$emit('add-new-card', card);
-            console.log("3: Emit from Search Card Form", card)
+            console.log("Emit from Search Card Form", card)
 
         },
 
         addToWishlist: function (card) {
             this.$emit('add-to-wishlist', card);
-            console.log("3: Emit from Search Card Form", card)
+            console.log("Emit from Search Card Form", card)
 
         },
 

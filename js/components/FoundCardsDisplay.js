@@ -9,13 +9,13 @@ app.component('FoundCardsSelection', {
     methods: {
         addNewCard: function (card) {
             this.$emit('add-new-card', card);
-            console.log("2: Emit from Found Card Display", card)
+            console.log("Emit from Found Card Display", card)
 
         },
 
         addToWishlist: function (card) {
             this.$emit('add-to-wishlist', card);
-            console.log("2: Emit from Found Card Display", card)
+            console.log("Emit from Found Card Display", card)
 
         },
 

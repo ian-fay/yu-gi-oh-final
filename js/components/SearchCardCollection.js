@@ -9,7 +9,8 @@ app.component('SearchCardCollection', {
     //          separately for each instance of this component
     data: function(){
         return {
-
+            
+            //This shows what all of the different options for the reaching of the overall card database is. 
             cardTypeOptions: [
                 'Monster', 'Trap', 'Spell'
             ],
@@ -99,14 +100,11 @@ app.component('SearchCardCollection', {
                 })
                 return
             }
-
             update(() => {
                 const needle = val.toLowerCase()
                 this.filteredMonsterTypes = this.monsterTypeOptions.filter((v => v.toLowerCase().indexOf(needle) > -1))
             })
-
         },
-
     },
 
 
