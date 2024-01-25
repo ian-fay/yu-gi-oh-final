@@ -7,18 +7,32 @@ app.component('SearchCardDatabaseForm', {
         return {
             //TODO: Add documentation in the form of comments on everything
             cardTypeOptions: [
-                'Monster', 'Trap', 'Spell'
+                'Monster', 
+                'Trap', 
+                'Spell'
             ],
 
             monsterTypeOptions: [
-
-                "Effect Monster", "Flip Effect Monster" , "Flip Tuner Effect Monster",
-                "Gemini Monster", "Normal Monster", "Normal Tuner Monster",
-                "Pendulum Effect Monster", "Pendulum Flip Effect Monster", "Pendulum Normal Monster",
-                "Pendulum Tuner Effect Monster", "Ritual Effect Monster", "Ritual Monster",
-                "Fusion Monster", "Link Monster", "Pendulum Effect Fusion Monster",
-                "Synchro Monster", "Synchro Pendulum Effect Monster", "Synchro Tuner Monster",
-                "XYZ Monster", "XYZ Pendulum Effect Monster"
+                "Effect Monster", 
+                "Flip Effect Monster" ,
+                "Flip Tuner Effect Monster",
+                "Gemini Monster", 
+                "Normal Monster", 
+                "Normal Tuner Monster",
+                "Pendulum Effect Monster", 
+                "Pendulum Flip Effect Monster", 
+                "Pendulum Normal Monster",
+                "Pendulum Tuner Effect Monster", 
+                "Ritual Effect Monster", 
+                "Ritual Monster",
+                "Fusion Monster", 
+                "Link Monster", 
+                "Pendulum Effect Fusion Monster",
+                "Synchro Monster", 
+                "Synchro Pendulum Effect Monster", 
+                "Synchro Tuner Monster",
+                "XYZ Monster", 
+                "XYZ Pendulum Effect Monster"
             ],
 
 

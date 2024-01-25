@@ -53,7 +53,6 @@ app.component('GameCard', {
       <q-dialog v-model="cardInfo">
       <q-card>
         <q-card-section align="center">
-          <!--Troubleshoot adding an image to the card.--> 
           <img :src="cardArt" class="focused-card-image">
         </q-card-section>
         

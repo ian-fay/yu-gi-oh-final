@@ -2,7 +2,7 @@ class CardFactory {
 //THis is a factory that takes in the API search data from SearchCardForm and converts them into Cards based on their type of card.
     //It then pushes all of those objects into a collection, which is then passed back to the Search Card Form, where it then displays the collection.
     static createFromYGOPro(cards) {
-        let newItem = false;
+        let newItem = null;
         const foundCards = new CardCollection();
 
         cards.forEach(card => {
@@ -53,7 +53,7 @@ class CardFactory {
     }
 
     static createFromLocalStorage(cards) {
-        let newItem = false;
+        let newItem = null;
         const cardList = new CardCollection();
 
         cards.forEach(card => {
@@ -76,7 +76,7 @@ class CardFactory {
                 case"Synchro Monster":
                 case"Synchro Pendulum Effect Monster":
                 case"Synchro Tuner Monster":
-                case "XYZ Monster":
+                case"XYZ Monster":
                 case"XYZ Pendulum Effect Monster":
                     console.log("Monster Card")
                     newItem = new MonsterCard(card.cardName, card.cardType, card.cardArchetype, card.cardText, card.cardArt, card.favorite, card.cardPrices);

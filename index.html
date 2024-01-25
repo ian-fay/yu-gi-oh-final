@@ -74,13 +74,13 @@
 
                 <q-tab-panel name="fav-cards">
                     <div class="text-h6">Favorite Cards</div>
-                    <search-card-collection v-bind:card-list="favCardList"></search-card-collection>
+                    <!-- <search-card-collection v-bind:card-list="favCardList"></search-card-collection> -->
                     <card-collection collection-name="Favorite Cards" v-bind:card-list="favCardList" @remove-card="removeCard"></card-collection>
                 </q-tab-panel>
 
                 <q-tab-panel name="wishlist">
                     <div class="text-h6">Wishlist</div>
-                    <search-card-collection v-bind:card-list="wishlist"></search-card-collection>
+                    <!-- <search-card-collection v-bind:card-list="wishlist"></search-card-collection> -->
                     <wishlist-collection collection-name="Wishlisted Cards" v-bind:card-list="wishlist" @remove-from-wishlist="removeFromWishlist"></wishlist-collection>
                 </q-tab-panel>
 

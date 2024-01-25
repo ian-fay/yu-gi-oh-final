@@ -21,7 +21,6 @@ app.component('CardCollection', {
         }
     },
 
-
     template: `
       <div>
         <game-card v-for="card in cardList.items"
